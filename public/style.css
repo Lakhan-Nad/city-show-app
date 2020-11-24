@@ -1,0 +1,244 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway|Reenie+Beanie);
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 5%;
+  font-family: "Raleway", sans-serif;
+  line-height: 1.5em;
+}
+
+img {
+  width: 100%;
+  height: 200px;
+}
+
+.caption,
+h1,
+.date {
+  margin: 0;
+  text-align: center;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+}
+
+.caption,
+h1 {
+  font-family: "Reenie Beanie", sans-serif;
+  font-size: 2em;
+  padding: 10px 10px 0 10px;
+}
+
+.date {
+  font-size: 0.75em;
+}
+
+.description {
+  font-size: 0.9em;
+  padding: 0 20px 20px 20px;
+  text-align: left;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+}
+
+.container {
+  perspective: 1000px;
+  display: inline-block;
+  margin: 3%;
+}
+
+.container:hover .flipper {
+  transform: rotateY(180deg);
+}
+
+.container,
+.front,
+.back {
+  width: 250px;
+  height: 250px;
+}
+
+.back {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.front {
+  overflow: hidden;
+}
+
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.front,
+.back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 250px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.front {
+  z-index: 2;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+#content {
+  align-self: center;
+  position: absolute;
+  left: 35%;
+  top: 10%;
+  text-align: left;
+  max-width: 60%;
+  min-width: 60%;
+}
+
+.desc-area {
+  position: absolute;
+  left: 5%;
+  max-width: 30%;
+}
+.main {
+  position: fixed;
+  left: 5%;
+  top: 30%;
+  background-color: #fefefe;
+  border: 1px solid #f2f2f2;
+  border-radius: 3px;
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.5);
+  min-width: 350px;
+  max-width: 450px;
+  width: 40vw;
+  padding: 2rem;
+}
+.main .form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1em 0 0 0;
+}
+.main .form-buttons button {
+  margin-left: 16px;
+}
+
+.form-field {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 0.5em;
+}
+.form-field:last-child {
+  margin-bottom: 0;
+}
+.form-field label {
+  align-self: center;
+  flex-shrink: 0;
+  flex-basis: 100%;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .form-field label {
+    flex-basis: 80px;
+    width: 80px;
+  }
+}
+.form-field > section {
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  display: flex;
+  flex: 1;
+}
+.form-field > section input,
+section textarea {
+  border: 0;
+  border-left: 1px solid #ccc;
+  flex-grow: 1;
+  font-size: 1.1rem;
+  font-weight: 300;
+  padding: 0.35em 0.5em;
+}
+.a-btn,
+.a-btn--filled {
+  padding: 0.35em 1em;
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  border: 1px solid #3498db;
+  background-color: #fff;
+  transition: all 146ms ease;
+  font-size: 1.2rem;
+  border-radius: 3px;
+  color: #3498db;
+}
+.a-btn:enabled:hover,
+.a-btn--filled:enabled:hover {
+  background-color: #3498db;
+  color: #fff;
+  box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.3);
+}
+.a-btn--filled {
+  background-color: #3498db;
+  border-color: #3498db;
+  color: #fff;
+}
+.a-btn--filled:enabled:hover {
+  background-color: #2980b9;
+  border-color: #2980b9;
+}
+.a-btn:disabled,
+.a-btn--filled:disabled {
+  background-color: #ecf0f1;
+  border-color: #bdc3c7;
+  color: #6a6a6a;
+}
+#form-desc {
+  width: 400px;
+  height: 100px;
+}
+.page-heading {
+  font-size: 50px;
+  font-weight: bold;
+}
+.page-message {
+  font-family: "Courier New", Courier, monospace;
+}
+
+#suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 99%;
+  background: #fff;
+}
+
+.sug {
+  padding: 0.4rem 0.2rem;
+}
+
+.sug div {
+  margin: 0;
+  padding: 0;
+}
+
+.sug .pname {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.sug .paddress {
+  font-size: 0.8rem;
+  font-weight: 200;
+}
+
+.sug:hover {
+  background: #dfdfdf;
+}

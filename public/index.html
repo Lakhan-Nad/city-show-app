@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPZ-lQmvuKUquo2BcQAy72WZgbBhjklng&libraries=places"></script>
+    <title>List Cities</title>
+  </head>
+  <body>
+    <div class="desc-area">
+      <h1 class="page-heading">Welcome User!!</h1>
+      <p class="page-message">
+        Showcase places you have been to and describe your experience.
+      </p>
+      <div class="main">
+        <form
+          onsubmit="event.preventDefault();formSubmit();"
+          autocomplete="off"
+        >
+          <h1>Add New City!</h1>
+          <div class="form-field">
+            <label for="form-name" class="label">City</label>
+            <section style="position: relative">
+              <input
+                id="form-name"
+                required
+                type="text"
+                placeholder="City"
+                name="name"
+              />
+              <div id="suggestions"></div>
+            </section>
+          </div>
+          <div class="form-field">
+            <label for="form-date" class="label">Date</label>
+            <section>
+              <input
+                id="form-date"
+                required
+                type="date"
+                placeholder=""
+                name="date"
+              />
+            </section>
+          </div>
+          <div class="form-field">
+            <label for="form-desc" class="label">Experience</label>
+            <section>
+              <textarea
+                id="form-desc"
+                required
+                name="desc"
+                placeholder="It was great..."
+              >
+              </textarea>
+            </section>
+          </div>
+          <input type="hidden" value="" id="form-url" />
+          <div class="form-buttons">
+            <button type="submit" class="a-btn--filled">Add!</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div id="content"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
